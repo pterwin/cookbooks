@@ -1,0 +1,34 @@
+var config = {};
+
+/************************ SERVER RELATED config ****************************/
+
+config.app_name          = 'FTP File Pusher';
+config.auto_run          = true;
+
+/************************ APP RELATED config ********************************/
+// copy paste app config into here
+
+config.app               = {};
+
+// after max retries we stop sending the files
+config.app.max_retries   = 3;
+
+// use absolute paths
+config.app.watch_dir           = '/vagrant/node_engines/cdr_sender/cdr_dir';
+
+// where to store pushed files. No trailing /
+config.app.processed_dir = '/vagrant/node_engines/cdr_sender/cdr_done_dir';
+
+
+config.app.sftp = {
+	host : '127.0.0.1',
+	user : 'erwin',
+	pass : 'ruthrocks',
+	port : 22,
+
+	//passkey
+
+	// full path to sftp folder where files will be dropped
+	path : '/home/erwin'
+};
+module.exports 					= config;
